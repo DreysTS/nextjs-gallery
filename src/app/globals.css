@@ -1,0 +1,13 @@
+body {
+    font-family: var(--inter);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19.6px;
+}
+
+h1,
+h2 {
+    font-family: var(--font-cormorant-sc);
+    font-weight: 500;
+    text-transform: uppercase;
+}
