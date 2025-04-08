@@ -1,6 +1,8 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
+    output: "export",
+    basePath: "/nextjs-gallery",
     experimental: {
         optimizePackageImports: ["@chakra-ui/react"],
     },
