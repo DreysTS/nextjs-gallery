@@ -2,7 +2,7 @@
 
 import { useGallery } from "@/lib/hooks/useGallery"
 import { Box, Container, Text } from "@chakra-ui/react"
-import React, { useState } from "react"
+import React from "react"
 import GalleryCard from "./GalleryCard"
 import GalleryError from "./GalleryError"
 import { useSearchParams } from "next/navigation"
