@@ -1,12 +1,30 @@
 "use client"
 
 import { useGallery } from "@/lib/hooks/useGallery"
-import { Box, Container } from "@chakra-ui/react"
+import { Box, Container, Text } from "@chakra-ui/react"
 import React, { useState } from "react"
 import GalleryCard from "./GalleryCard"
+import GalleryError from "./GalleryError"
+import { useSearchParams } from "next/navigation"
 
 export default function GalleryCards() {
-    const { paintings, isLoading, totalPages } = useGallery()
+    const searchParams = useSearchParams()
+
+    const { paintings, isLoading } = useGallery()
+
+    if (isLoading)
+        return (
+            <Text
+                marginTop='60px'
+                md={{ textAlign: "center" }}
+                fontFamily='var(--font-inter)'
+                color='text'
+            >
+                Loading...
+            </Text>
+        )
+    if (!paintings || paintings.length === 0)
+        return <GalleryError query={searchParams.get("query")?.toString()} />
 
     return (
         <Container paddingInline='20px' lg={{ paddingInline: "100px" }}>

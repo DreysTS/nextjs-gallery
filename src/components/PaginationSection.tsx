@@ -25,6 +25,8 @@ export function PaginationSection() {
         router.replace(`${pathname}?${params.toString()}`)
     }
 
+    if (!totalPages) return null
+
     return (
         <Container
             display='flex'
@@ -35,6 +37,7 @@ export function PaginationSection() {
                 count={totalPages}
                 pageSize={1}
                 defaultPage={currentPage}
+                siblingCount={1}
             >
                 <ButtonGroup variant='plain' size='sm'>
                     <Pagination.PrevTrigger asChild>
@@ -53,6 +56,18 @@ export function PaginationSection() {
                                 onClick={() => handlePageChange(page.value)}
                                 border={0}
                                 color='pagination'
+                                display='block'
+                                width='fit-content'
+                                _selected={{
+                                    backgroundColor: "pagination.active",
+                                    borderRadius: "4px",
+                                }}
+                                borderRadius={0}
+                                _hover={{
+                                    borderBottomWidth: "1px",
+                                    borderBottomStyle: "solid",
+                                    borderBottomColor: "pagination.underline",
+                                }}
                             >
                                 {page.value}
                             </IconButton>

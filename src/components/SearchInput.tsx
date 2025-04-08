@@ -6,7 +6,6 @@ import { InputGroup } from "./ui/input-group"
 import SearchIcon from "./icons/SearchIcon"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { debounce } from "@/lib/utils/debounce"
-import { useGallery } from "@/lib/hooks/useGallery"
 
 export default function SearchInput() {
     const searchParams = useSearchParams()
@@ -51,6 +50,7 @@ export default function SearchInput() {
                             color: "search.placehoder",
                             fontWeight: "300",
                             fontSize: "14px",
+                            fontFamily: "var(--font-inter)",
                         }}
                         onChange={(e) => {
                             handleSearch(e.target.value)
