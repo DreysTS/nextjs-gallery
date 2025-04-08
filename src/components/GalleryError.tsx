@@ -1,3 +1,5 @@
+"use client"
+
 import { Box, Span, Text } from "@chakra-ui/react"
 import React from "react"
 
